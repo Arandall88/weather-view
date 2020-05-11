@@ -38,24 +38,27 @@
         <![endif]-->
 
 
-    <div class="container">
-        <!-- Rows (!! Up to 12 units !!) added for City Search, Current Weather Conditions, and 5-Day Forecast -->
-        <div class="row">
-            <div class="col-3 bg-city">
-                <h4>Search by City</h4>
-                <!-- div form to input city -->
-                <form id="city-form">
-                    <div><input type="text" id="city-name"></div>
-                    <div><input type="submit"></div>
-                </form>
-                <!-- input form to display Recent Searches in localStorage -->
-                <ul class="nav flex-column" id="search">
-                    <li class="nav-item">Recent Searches</li>
-                    <input type="text" class="form-control" id="" placeholder="">
-                </ul>
-                <!-- added Clear All button to clear user input/add functionality -->
-                <button>Clear All</button>
-            </div> 
+    <div id="box">
+        <h1>Weather Dashboard</h1>
+    </div>
+    
+    <div id="left-box">
+        <form id="weather-search">
+            </strong><label for="city-input"><strong>Search by City:</strong></label>
+            <br>
+            <input type="text" id="input-city" placeholder="City">
+    
+            <!-- Button will trigger new cities to be added -->
+            <input id="searchBtn" class="btn btn-primary mb-2" type="submit" value="Search">
+        </form>
+    
+        <div class="cities-array"></div>
+    
+    </div>
+
+
+            <img src="images/felix-mittermeier-L4-16dmZ-1c-unsplash.jpg" class="img-thumbnail" alt="Thumbnail Image">
+            
     <script src="" async defer></script>
 </body>
 
