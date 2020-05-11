@@ -21,7 +21,7 @@
 
     <nav class="navbar navbar-dark bg-primary">
         <!-- Navbar content -->
-        <h1>  WeatherView!</h1>
+        <h1> WeatherView!</h1>
     </nav>
     <!-- <h1> Welcome to the WeatherView App!</h1> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -41,24 +41,79 @@
     <div id="box">
         <!-- <h1>Weather Dashboard</h1> -->
     </div>
-    
+
     <div id="left-box">
         <form id="weather-search">
             </strong><label for="city-input"><strong>Search by City:</strong></label>
             <br>
             <input type="text" id="input-city" placeholder="City">
-    
+
             <!-- Button will trigger new cities to be added -->
             <input id="searchBtn" class="btn btn-primary mb-2" type="submit" value="Search">
         </form>
-    
+
         <div class="cities-array"></div>
-    
+
     </div>
+        <div class="container-fluid">
+            <h4>
+                <em>5-Day Forecast:</em>
+            </h4>
+            <div class="row">
+                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
+                    <div class="monday">
+                        <p class="temp"></p>
+                        <p class="humidity"></p>
+                    </div>
+                </div>
+                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
+                    <div class="tuesday">
+                        <p class="temp"></p>
+                        <p class="humidity"></p>
+                    </div>
+                </div>
+                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
+                    <div class="wednesday">
+                        <p class="temp"></p>
+                        <p class="humidity"></p>
+                    </div>
+                </div>
+        
+                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
+                    <div class="thursday">
+                        <p class="temp"></p>
+                        <p class="humidity"></p>
+                    </div>
+                </div>
+        
+                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
+                    <div class="friday">
+                        <p class="temp"></p>
+                        <p class="humidity"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-            <img src="images/felix-mittermeier-L4-16dmZ-1c-unsplash.jpg" class="img-thumbnail" alt="Thumbnail Image">
-            
+    <img src="images/felix-mittermeier-L4-16dmZ-1c-unsplash.jpg" class="img-thumbnail" alt="Thumbnail Image">
+
+
+    
+    <script src="script.js">
+
+        /* adding for loop to get and store local storage */
+        var cityName = document.getElementById("city-name");
+
+
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+
+            localStorOutput.innerHTML += `${key}: ${value}<br />`;
+        } 
+
+
     <script src="" async defer></script>
 </body>
 
