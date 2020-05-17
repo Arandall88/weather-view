@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html>
+
 
 <head>
     <meta charset="utf-8">
@@ -24,18 +20,7 @@
         <h1> WeatherView!</h1>
     </nav>
     <!-- <h1> Welcome to the WeatherView App!</h1> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
 
 
     <div id="box">
@@ -44,77 +29,54 @@
 
     <div id="left-box">
         <form id="weather-search">
-            </strong><label for="city-input"><strong>Search by City:</strong></label>
+            </strong><label for="input-city"><strong>Search by City:</strong></label>
             <br>
             <input type="text" id="input-city" placeholder="City">
 
             <!-- Button will trigger new cities to be added -->
-            <input id="searchBtn" class="btn btn-primary mb-2" type="submit" value="Search">
+            <input id="citySearch" class="btn btn-primary mb-2" type="button" value="Search">
         </form>
-
-        <div class="cities-array"></div>
-
+        <ul class="nav flex-column" id="search">
+            <li class="nav-item"><em>Recent Searches</em></li>
+            <input type="text" class="form-control" id="" placeholder="">
+        </ul>
+        <!-- added Clear All button to clear user input/add functionality -->
+        <button>Clear All</button>
     </div>
-        <div class="container-fluid">
-            <h4>
-                <em>5-Day Forecast:</em>
-            </h4>
-            <div class="row">
-                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
-                    <div class="monday">
-                        <p class="temp"></p>
-                        <p class="humidity"></p>
-                    </div>
-                </div>
-                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
-                    <div class="tuesday">
-                        <p class="temp"></p>
-                        <p class="humidity"></p>
-                    </div>
-                </div>
-                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
-                    <div class="wednesday">
-                        <p class="temp"></p>
-                        <p class="humidity"></p>
-                    </div>
-                </div>
-        
-                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
-                    <div class="thursday">
-                        <p class="temp"></p>
-                        <p class="humidity"></p>
-                    </div>
-                </div>
-        
-                <div class="card text-white bg-primary mb-3" style="max-width: 9rem;">
-                    <div class="friday">
-                        <p class="temp"></p>
-                        <p class="humidity"></p>
-                    </div>
-                </div>
+    <div id="display"></div>
+
+    <div class="container-fluid">
+        <div class="col-9 weather-conditions">
+            <div id="current-weather">
+                <h4><em>Current Weather Conditions</em></h4>
+                <div id="city"></div>
+                <div id="date"></div>
+                <div id="description"></div>
+                <div id="icon"></div>
+                <div id="temp"></div>
+                <div id="humidity"></div>
+                <div id="speed"></div>
+                <div id="index"></div>
             </div>
         </div>
+    </div>
+
+    <div class="container-fluid">
+        <h4>
+            <em>5-Day Forecast:</em>
+        </h4>
+        <div id="forecast" class="row">
+
+        </div>
+    </div>
 
 
     <img src="images/felix-mittermeier-L4-16dmZ-1c-unsplash.jpg" class="img-thumbnail" alt="Thumbnail Image">
 
 
-    
-    <script src="script.js">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-        /* adding for loop to get and store local storage */
-        var cityName = document.getElementById("city-name");
-
-
-        for (var i = 0; i < localStorage.length; i++) {
-            var key = localStorage.key(i);
-            var value = localStorage.getItem(key);
-
-            localStorOutput.innerHTML += `${key}: ${value}<br />`;
-        } 
-
-
-    <script src="" async defer></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
